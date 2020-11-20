@@ -193,7 +193,7 @@ class App extends React.Component<{}, State> {
       text = 'Player2の勝利'
     }
 
-    return <div>
+    return <div className="text">
       {text}
     </div>
   }

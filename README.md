@@ -2,8 +2,6 @@
 react + tsで作ったconnect4のゲームです。
 現在はクラスコンポーネントで書かれていますが、関数コンポーネントに移植予定です。
 
-参考：https://www.youtube.com/watch?v=HCgu4F4qlmg&t=2875s&ab_channel=AlexeiDarmin
-
 
 
 # Getting Started with Create React App

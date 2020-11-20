@@ -1,12 +1,14 @@
 import * as React from "react";
 import "./App.css";
 
+//プレイヤーの定義
 enum Player {
   None = 0,
   One = 1,
   Two = 2
 }
 
+//ゲーム状態の定義
 enum GameState {
   Ongoing = -1,
   Draw = 0,

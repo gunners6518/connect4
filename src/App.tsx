@@ -23,6 +23,7 @@ interface State {
   gameState: GameState | Player
 }
 
+//ボードを初期化してセルを配置
 const initializeBoard = () => {
   const board = [];
   for (let i = 0; i < 42; i++) {
@@ -37,6 +38,7 @@ const getPrettyPlayer = (player: Player) => {
   if (player === Player.Two) return "playerTwo";
 };
 
+//indexで受け取ったコマの列で一番低い値を取得
 const findLowestEmptyIndex = (board: Board, column: number) => {
   for (let i = 35 + column; i >= 0; i -= 7) {
     if (board[i] === Player.None) return i;
@@ -45,12 +47,14 @@ const findLowestEmptyIndex = (board: Board, column: number) => {
   return -1;
 };
 
+//プレイヤー切り替え
 const togglePlayerTurn = (player: Player) => {
   return player === Player.One ? Player.Two : Player.One;
 };
 
+//ゲームの状態(4つなら並んでいるかどうか)
 const getGameState = (board: Board) => {
-  // Checks wins horizontally
+  //横チェック
   for (let r = 0; r < 6; r++) {
     for (let c = 0; c <= 4; c++) {
       const index = r * 7 + c;
@@ -61,7 +65,7 @@ const getGameState = (board: Board) => {
     }
   }
 
-  // check wins vertically
+  //縦チェック
   for (let r = 0; r <= 2; r++) {
     for (let c = 0; c < 7; c++) {
       const index = r * 7 + c;
@@ -77,12 +81,12 @@ const getGameState = (board: Board) => {
     }
   }
 
-  // check wins diagonally
+  //斜めチェック
   for (let r = 0; r <= 2; r++) {
     for (let c = 0; c < 7; c++) {
       const index = r * 7 + c;
 
-      // Checks diagonal down-left
+      // 右肩上がり
       if (c >= 3) {
         const boardSlice = [
           board[index],
@@ -95,7 +99,7 @@ const getGameState = (board: Board) => {
         if (winningResult !== false) return winningResult;
       } 
 
-      // Checks diagonal down-right
+      // 左肩上がり
       if (c <= 3) {
         const boardSlice = [
           board[index],

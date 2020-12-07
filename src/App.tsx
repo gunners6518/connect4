@@ -208,8 +208,8 @@ class App extends React.Component<{}, State> {
 
     return (
       <div className="App">
-        {this.renderGameStatus() }
-        <div className="board">{this.renderCells()}</div>
+        {/* {this.renderGameStatus() }
+        <div className="board">{this.renderCells()}</div> */}
       </div>
     );
   }

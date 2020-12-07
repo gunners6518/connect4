@@ -2,7 +2,7 @@
 react + tsで作ったconnect4のゲームです。
 現在はクラスコンポーネントで書かれていますが、関数コンポーネントに移植予定です。
 
-<img src="./sample.png>
+![スクリーンショット 2020-12-07 16 43 59](https://user-images.githubusercontent.com/49203635/101323432-025b4b80-38ac-11eb-801b-bfd090dbe5f0.png)
 
 # Getting Started with Create React App
 

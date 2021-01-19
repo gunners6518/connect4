@@ -1,52 +1,17 @@
 #プロジェクトの概要
-react + tsで作ったconnect4のゲームです。
-クラスコンポーネントを使っています。
+ブラウザ上で遊べるconnect4です。
+
+##使用技術
+React(クラスコンポーネント)
+TypeScript
+
+##要件
+- ゲーム開始前、ゲーム中、ゲーム後の3つの状態がある
+- セルをクリックするとその列の一番下に駒が配置されて、相手プレイヤーの番になる
+- タテ、ヨコ、ナナメのいずれかに同じ色が4つ連続したら、そのプレイヤーの勝ちになる
 
 ![スクリーンショット 2020-12-07 16 43 59](https://user-images.githubusercontent.com/49203635/101323432-025b4b80-38ac-11eb-801b-bfd090dbe5f0.png)
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#解説記事
+[React + TypeScriptでコネクト4を作った報告（クラスコンポーネント）](https://terrblog.com/react-typescript%e3%81%a7%e3%82%b3%e3%83%8d%e3%82%af%e3%83%884%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%9f%e5%a0%b1%e5%91%8a%ef%bc%88%e3%82%af%e3%83%a9%e3%82%b9%e3%82%b3%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%8d/)

@@ -5,7 +5,7 @@ import "./App.css";
 enum Player {
   None = 0,
   One = 1,
-  Two = 2
+  Two = 2,
 }
 
 //ゲーム状態の定義
@@ -13,14 +13,14 @@ enum GameState {
   Ongoing = -1,
   Draw = 0,
   PlayerOneWin = Player.One,
-  PlayerTwoWin = Player.Two
+  PlayerTwoWin = Player.Two,
 }
 type Board = Player[];
 
 interface State {
   board: Board;
   playerTurn: Player;
-  gameState: GameState | Player
+  gameState: GameState | Player;
 }
 
 //ボードを初期化してセルを配置
@@ -73,7 +73,7 @@ const getGameState = (board: Board) => {
         board[index],
         board[index + 7],
         board[index + 7 * 2],
-        board[index + 7 * 3]
+        board[index + 7 * 3],
       ];
 
       const winningResult = checkWinningSlice(boardSlice);
@@ -92,12 +92,12 @@ const getGameState = (board: Board) => {
           board[index],
           board[index + 7 - 1],
           board[index + 7 * 2 - 2],
-          board[index + 7 * 3 - 3]
+          board[index + 7 * 3 - 3],
         ];
-  
+
         const winningResult = checkWinningSlice(boardSlice);
         if (winningResult !== false) return winningResult;
-      } 
+      }
 
       // 左肩上がり
       if (c <= 3) {
@@ -105,24 +105,24 @@ const getGameState = (board: Board) => {
           board[index],
           board[index + 7 + 1],
           board[index + 7 * 2 + 2],
-          board[index + 7 * 3 + 3]
+          board[index + 7 * 3 + 3],
         ];
-  
+
         const winningResult = checkWinningSlice(boardSlice);
         if (winningResult !== false) return winningResult;
       }
     }
   }
 
-  if (board.some(cell => cell === Player.None)) {
-    return GameState.Ongoing
+  if (board.some((cell) => cell === Player.None)) {
+    return GameState.Ongoing;
   } else {
-    return GameState.Draw
+    return GameState.Draw;
   }
 };
 
 const checkWinningSlice = (miniBoard: Player[]) => {
-  if (miniBoard.some(cell => cell === Player.None)) return false;
+  if (miniBoard.some((cell) => cell === Player.None)) return false;
 
   if (
     miniBoard[0] === miniBoard[1] &&
@@ -139,7 +139,7 @@ class App extends React.Component<{}, State> {
   state: State = {
     board: initializeBoard(),
     playerTurn: Player.One,
-    gameState: GameState.Ongoing
+    gameState: GameState.Ongoing,
   };
 
   public renderCells = () => {
@@ -148,10 +148,10 @@ class App extends React.Component<{}, State> {
   };
 
   public handleOnClick = (index: number) => () => {
-    const {gameState} = this.state
+    const { gameState } = this.state;
 
-    if (gameState !== GameState.Ongoing) return 
-    
+    if (gameState !== GameState.Ongoing) return;
+
     const column = index % 7;
 
     this.makeMove(column);
@@ -170,7 +170,7 @@ class App extends React.Component<{}, State> {
     this.setState({
       board: newBoard,
       playerTurn: togglePlayerTurn(playerTurn),
-      gameState
+      gameState,
     });
   }
 
@@ -186,30 +186,27 @@ class App extends React.Component<{}, State> {
   };
 
   public renderGameStatus = () => {
-    const { gameState } = this.state 
+    const { gameState } = this.state;
 
-    let text
+    let text;
     if (gameState === GameState.Ongoing) {
-      text = 'Player1がセルを選択して、ゲームを始めてください'
+      text = "Player1がセルを選択して、ゲームを始めてください";
     } else if (gameState === GameState.Draw) {
-      text = '引き分け'
+      text = "引き分け";
     } else if (gameState === GameState.PlayerOneWin) {
-      text = 'Player1の勝利！'
+      text = "Player1の勝利！";
     } else if (gameState === GameState.PlayerTwoWin) {
-      text = 'Player2の勝利'
+      text = "Player2の勝利";
     }
 
-    return <div className="text">
-      {text}
-    </div>
-  }
+    return <div className="text">{text}</div>;
+  };
 
   public render() {
-
     return (
       <div className="App">
-        {/* {this.renderGameStatus() }
-        <div className="board">{this.renderCells()}</div> */}
+        {this.renderGameStatus()}
+        <div className="board">{this.renderCells()}</div>
       </div>
     );
   }

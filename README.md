@@ -1,17 +1,21 @@
-プロジェクトの概要
-ブラウザ上で遊べるconnect4です。
+# Project Summary
 
-使用技術
-- React(クラスコンポーネント)
+This is connect4, which can be played in a browser.
+
+# Technologies used
+- React (class components)
 - TypeScript
 
-要件
-- ゲーム開始前、ゲーム中、ゲーム後の3つの状態がある
-- セルをクリックするとその列の一番下に駒が配置されて、相手プレイヤーの番になる
-- タテ、ヨコ、ナナメのいずれかに同じ色が4つ連続したら、そのプレイヤーの勝ちになる
+# Requirements
+- There are three states: before the game starts, during the game, and after the game.
+- When you click on a cell, a piece is placed at the bottom of that column, and it's the other player's turn.
+- If four consecutive pieces of the same color are placed vertically, horizontally, or vertically, the player wins.
 
 ![スクリーンショット 2020-12-07 16 43 59](https://user-images.githubusercontent.com/49203635/101323432-025b4b80-38ac-11eb-801b-bfd090dbe5f0.png)
 
+# 環境構築
+1. ``git clone git@github.com:gunners6518/connect4.git``
+2. ``yarn``
+3. ``yarn satrt``
 
-解説記事
-[React + TypeScriptでコネクト4を作った報告（クラスコンポーネント）](https://terrblog.com/react-typescript%e3%81%a7%e3%82%b3%e3%83%8d%e3%82%af%e3%83%884%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%9f%e5%a0%b1%e5%91%8a%ef%bc%88%e3%82%af%e3%83%a9%e3%82%b9%e3%82%b3%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%8d/)
+

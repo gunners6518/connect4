@@ -1,6 +1,7 @@
 # Project Summary
 
 This is connect4, which can be played in a browser.
+Deploy URL:https://hopeful-fermi-90a3f3.netlify.app/
 
 # Technologies used
 - React (class components)
